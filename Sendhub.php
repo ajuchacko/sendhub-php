@@ -24,6 +24,17 @@ class SendHub {
 		return $this->sendRequest('get', $api_url, ['body' => []]);
 	}
 
+	public function getThreads(array $options = [])
+	{
+		$thread_id = isset($options['id']) ? $options['id'] : null;
+
+		unset($options['id']);
+
+		$api_url = $this->baseUrl() . 'threads/' . $thread_id . $this->credentials() . '&' . http_build_query($options);
+
+		return $this->sendRequest('get', $api_url, ['body' => json_encode($options)]);
+	}
+
 	private function baseUrl()
 	{
 		return "https://api.sendhub.com/v1/";
