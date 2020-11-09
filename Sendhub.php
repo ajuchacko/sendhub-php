@@ -35,6 +35,13 @@ class SendHub {
 		return $this->sendRequest('get', $api_url, ['body' => json_encode($options)]);
 	}
 
+	public function getInbox(array $options = [])
+	{
+		$api_url = $this->baseUrl() . 'inbox' . $this->credentials() . '&' . http_build_query($options);
+
+		return $this->sendRequest('get', $api_url, ['body' => json_encode($options)]);
+	}
+
 	private function baseUrl()
 	{
 		return "https://api.sendhub.com/v1/";
