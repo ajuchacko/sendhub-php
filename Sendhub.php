@@ -33,6 +33,11 @@ class SendHub {
 		is_null($request) && $method[0] == 'delete' ? "Aaaand it\'s gone" : request;
 	}
 
+	public function get_groups_contacts(array $options = [])
+	{
+		return $this->sendRequest('get', $this->groupContactsUrl($options), ['body' => json_encode($options)]);
+	}
+
 	public function contacts(array $options = [], $contact_id = false)
 	{
 		if (count($options) > 0 && empty($options['contact_id'])) {
