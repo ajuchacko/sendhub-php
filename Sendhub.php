@@ -38,6 +38,11 @@ class SendHub {
 		return $this->sendRequest('get', $this->groupContactsUrl($options), ['body' => json_encode($options)]);
 	}
 
+	public function post_groups_contacts(array $options = [])
+	{
+		return $this->sendRequest('post', $this->groupContactsUrl($options), ['body' => json_encode($options)]);
+	}
+
 	public function contacts(array $options = [], $contact_id = false)
 	{
 		if (count($options) > 0 && empty($options['contact_id'])) {
