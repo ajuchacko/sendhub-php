@@ -74,6 +74,11 @@ class SendHub {
 		return $this->sendRequest('get', $api_url, ['body' => json_encode($options)]);
 	}
 
+	private function group_contacts_url($options)
+	{
+		return $this->baseUrl() . "groups/" . $options['id'] . '/contacts' . $this->credentials();
+	}
+
 	private function baseUrl()
 	{
 		return "https://api.sendhub.com/v1/";
