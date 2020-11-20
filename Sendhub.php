@@ -79,6 +79,11 @@ class SendHub {
 		return $this->baseUrl() . "groups/" . $options['id'] . '/contacts' . $this->credentials();
 	}
 
+	private function sendRequest(string $http_method, string $url, string $json)
+	{
+		return $this->client->{$http_method}($url, $json)->getBody();
+	}
+
 	private function baseUrl()
 	{
 		return "https://api.sendhub.com/v1/";
