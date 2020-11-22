@@ -1,17 +1,22 @@
 <?php
 
+namespace Ajuchacko91;
+
+use GuzzleHttp\Client;
+
 class SendHub {
 
 	private $api_key;
 	private $number;
 
-	public function __construct(string $api_key, string $number)
+	public function __construct(string $api_key, string $number, $client = null)
 	{
 		$this->api_key = $api_key;
 		$this->number = $number;
+		$this->client = $client ?? new Client();
 	}
 
-	public function __call($method, $options)
+	public function __call($method, $options = [])
 	{
 		$method = explode('_', $method);
 
@@ -30,7 +35,7 @@ class SendHub {
 
 		$request = $this->sendRequest($method[0], $api_url, ['body' => json_encode($options)]);
 
-		is_null($request) && $method[0] == 'delete' ? "Aaaand it\'s gone" : request;
+		is_null($request) && $method[0] == 'delete' ? "Aaaand it\'s gone" : $request;
 	}
 
 	public function get_groups_contacts(array $options = [])
