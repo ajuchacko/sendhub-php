@@ -1,6 +1,9 @@
 # sendhub-php
 An Easy to Use PHP SDK to work with the SendHub API.
 
+```php
+<?php
+
 use Ajuchacko91\SendHub;
 
 $api = new SendHub('api_key', '9633783490');
@@ -10,3 +13,4 @@ $api->getThreads();
 $api->get_groups_contacts();
 $api->post_groups_contacts();
 $api->contacts();
+```
