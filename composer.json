@@ -1,0 +1,28 @@
+{
+    "name": "ajuchacko91/sendhub-php",
+    "description": "Sendhub API wrapper in php",
+    "type": "library",
+    "keywords": [
+        "sendhub-php",
+        "api",
+        "wrapper",
+        "web service",
+        "client",
+        "HTTP client"
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aju",
+            "email": "ajuchacko91@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ajuchacko91\\": "src/"
+        }
+    }
+}
